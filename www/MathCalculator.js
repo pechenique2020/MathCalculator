@@ -2,10 +2,12 @@ var exec = require('cordova/exec');
 
 module.exports.add(arg0,success,error)
 {
-    exec(success, error, 'MathCalculator', 'add', [arg0]);
+    console.log("arg0",arg0);
+    exec(success, error, 'MathCalculator', 'add', [111,11]);
 }
 
 module.exports.substract(arg0,success,error)
 {
-    exec(success, error, 'MathCalculator', 'substract', [arg0]);
+    console.log("arg0",arg0);
+    exec(success, error, 'MathCalculator', 'substract', [111,11]);
 }
