@@ -1,6 +1,6 @@
 {
   "name": "mathcalculator",
-  "version": "1.0.0",
+  "version": "1.0.001",
   "description": "This is my first cordova plugin ",
   "main": "index.js",
   "scripts": {
