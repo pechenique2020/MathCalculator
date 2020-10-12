@@ -8,7 +8,7 @@
     <js-module name="MathCalculator" src="www/MathCalculator.js">
         <clobbers target="MathCalculator" />
     </js-module>
-
+    
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="MathCalculator">
@@ -18,14 +18,4 @@
         <config-file parent="/*" target="AndroidManifest.xml" />
         <source-file src="src/android/MathCalculator.java" target-dir="src/cordova/plugin/mathcalculator/MathCalculator" />
     </platform>
-
-    <platform name="ios">
-        <config-file parent="/*" target="config.xml">
-            <feature name="MathCalculator">
-                <param name="ios-package" value="MathCalculator" />
-            </feature>
-        </config-file>
-        <source-file src="src/ios/MathCalculator.m" />
-    </platform>
-
 </plugin>

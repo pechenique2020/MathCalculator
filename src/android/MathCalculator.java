@@ -14,45 +14,23 @@ public class MathCalculator extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if(action.equals("add"))
-        {
-            this.add(args, callbackContext);
-            return true;
-        }else if(action.equals("substract")){
-            this.substract(args, callbackContext);
+        if (action.equals("coolMethod")) {
+            int arg1 = args.getInt(0);
+            int arg2 = args.getInt(0);
+            int result = arg1 + arg2;
+
+            callbackContext.success("Result: " + result);
+
             return true;
         }
         return false;
     }
 
-    private void add(JSONArray args, CallbackContext callback) {
-        if (args != null) {
-            try {
-                int p1 = Integer.parseInt(args.getJSONObject(0).getString("param1"));
-                int p2 = Integer.parseInt(args.getJSONObject(0).getString("param2"));
-
-                callback.success(""+(p1+p2));
-            } catch (Exception ex) {
-                callback.error("Something went wrong " + ex);
-            }
+    private void coolMethod(String message, CallbackContext callbackContext) {
+        if (message != null && message.length() > 0) {
+            callbackContext.success(message);
         } else {
-            callback.error("Please do not pas null value");
+            callbackContext.error("Expected one non-empty string argument.");
         }
     }
-
-    private void substract(JSONArray args, CallbackContext callback) {
-        if (args != null) {
-            try {
-                int p1 = Integer.parseInt(args.getJSONObject(0).getString("param1"));
-                int p2 = Integer.parseInt(args.getJSONObject(0).getString("param2"));
-
-                callback.success(""+(p1-p2));
-            } catch (Exception ex) {
-                callback.error("Something went wrong " + ex);
-            }
-        } else {
-            callback.error("Please do not pas null value");
-        }
-    }
-
 }
