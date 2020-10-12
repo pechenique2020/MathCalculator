@@ -16,7 +16,7 @@ public class MathCalculator extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("coolMethod")) {
             int arg1 = args.getInt(0);
-            int arg2 = args.getInt(0);
+            int arg2 = args.getInt(1);
             int result = arg1 + arg2;
 
             callbackContext.success("Result: " + result);
