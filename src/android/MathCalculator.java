@@ -19,7 +19,7 @@ public class MathCalculator extends CordovaPlugin {
             this.add(args, callbackContext);
             return true;
         }else if(action.equals("substract")){
-            this.substr(args, callbackContext);
+            this.substract(args, callbackContext);
             return true;
         }
         return false;
